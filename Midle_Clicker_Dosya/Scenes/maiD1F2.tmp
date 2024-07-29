@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://cof2wsbhf8yla"]
+
+[ext_resource type="Script" path="res://MainScene.gd" id="1_hi66j"]
+[ext_resource type="Texture2D" uid="uid://b38homvhcr7oh" path="res://Images/Midle_Token 1 (2).png" id="2_gj6ar"]
+
+[node name="MainScene" type="Node2D"]
+script = ExtResource("1_hi66j")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 551.0
+offset_top = 937.0
+offset_right = 592.0
+offset_bottom = 977.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -60.0
+offset_top = -412.0
+offset_right = -6.0
+offset_bottom = -354.0
+
+[node name="GoldLabel" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "Altın: 0"
+
+[node name="TapButton" type="TextureButton" parent="Control/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_gj6ar")
+
+[node name="EnergyBar" type="ProgressBar" parent="Control/VBoxContainer"]
+layout_mode = 2
+max_value = 1000.0
+
+[connection signal="pressed" from="Control/VBoxContainer/TapButton" to="." method="_on_tap_button_pressed"]

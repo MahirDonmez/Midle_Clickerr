@@ -1,0 +1,113 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqxip427v5h1v"]
+
+[ext_resource type="Script" path="res://MainScene.gd" id="1_hi66j"]
+[ext_resource type="Texture2D" uid="uid://c44tmfnbeuark" path="res://Images/Midle_background.png" id="2_3muqq"]
+[ext_resource type="Texture2D" uid="uid://b38homvhcr7oh" path="res://Images/Midle_Token 1 (2).png" id="2_gj6ar"]
+[ext_resource type="FontFile" uid="uid://doi0c4m4e0vy1" path="res://Fonts/Xolonium-Regular.ttf" id="2_ywjtd"]
+[ext_resource type="Texture2D" uid="uid://cxsntxrxnig2b" path="res://Images/Midle_Token 1 (3).png" id="3_yw06e"]
+
+[node name="MainScene" type="Node2D"]
+script = ExtResource("1_hi66j")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 392.0
+offset_top = 600.0
+offset_right = 433.0
+offset_bottom = 640.0
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = -471.0
+offset_top = -604.0
+offset_right = 370.0
+offset_bottom = 676.0
+texture = ExtResource("2_3muqq")
+stretch_mode = 6
+
+[node name="TapButton" type="TextureButton" parent="Control"]
+layout_mode = 2
+offset_left = -248.0
+offset_top = 22.0
+offset_right = 152.0
+offset_bottom = 393.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("2_gj6ar")
+
+[node name="EnergyBar" type="ProgressBar" parent="Control"]
+layout_mode = 2
+offset_left = -239.0
+offset_top = 415.0
+offset_right = 161.0
+offset_bottom = 439.0
+grow_horizontal = 2
+grow_vertical = 0
+max_value = 1000.0
+step = 1.0
+show_percentage = false
+
+[node name="EnergyLabel" type="Label" parent="Control"]
+clip_contents = true
+layout_mode = 2
+offset_left = -240.0
+offset_top = 392.0
+offset_right = 160.0
+offset_bottom = 415.0
+grow_horizontal = 2
+grow_vertical = 0
+horizontal_alignment = 1
+
+[node name="GoldLabel" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -66.0
+offset_top = -100.0
+offset_right = 334.0
+offset_bottom = -39.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_ywjtd")
+theme_override_font_sizes/font_size = 50
+
+[node name="Midle_Token_Tepe" type="Sprite2D" parent="Control"]
+position = Vector2(-117.75, -71.375)
+scale = Vector2(0.680769, 0.640978)
+texture = ExtResource("3_yw06e")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 0
+offset_left = -334.0
+offset_top = 510.0
+offset_right = 278.0
+offset_bottom = 560.0
+alignment = 1
+
+[node name="ButtonRefferals" type="Button" parent="Control/HBoxContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+text = "Refferals
+"
+
+[node name="ButtonTasks" type="Button" parent="Control/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Tasks"
+
+[node name="TextureButton" type="TextureButton" parent="Control/HBoxContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+
+[node name="ButtonBoosts" type="Button" parent="Control/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Boosts
+"
+
+[node name="ButtonStatistics" type="Button" parent="Control/HBoxContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+text = "Statistics"
+
+[connection signal="pressed" from="Control/TapButton" to="." method="_on_tap_button_pressed"]
+[connection signal="pressed" from="Control/HBoxContainer/ButtonBoosts" to="." method="_on_button_boosts_pressed"]

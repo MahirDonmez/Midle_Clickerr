@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://cy1e6yyj2u604"]
+
+[ext_resource type="Script" path="res://BoostsScene.gd" id="1_i2je3"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i2je3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 295.0
+offset_top = 596.0
+offset_right = 441.0
+offset_bottom = 759.0
+
+[node name="GoldLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Gold: 0"
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Upgrades:"
+
+[node name="MultitapButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Multitap"
+
+[node name="EnergyLimitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Energy Limit"
+
+[node name="RechargingSpeedButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Recharging Speed"
+
+[node name="MidleBOTButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "MidleBOT"
